@@ -145,7 +145,6 @@ footer p {
   margin: 4px 0;
 }
 
-
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -175,6 +174,8 @@ footer p {
     flex-basis: 100%;
   }
 }
+
+
 
 
 
