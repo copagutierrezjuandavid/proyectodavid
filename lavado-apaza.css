@@ -1,14 +1,65 @@
+/*Colores claro*/
+:root {
+  --fondo: #eef4f8;
+  --texto: #1f2a33;
+  --tarjeta: #ffffff;
+  --borde: #d3e0ea;
+  --titulo: #0b4f8a;
+  --enlace: #0b6fc2;
+  --barra: #0b4f8a;
+  --barra-texto: #ffffff;
+  --resalte: #ffd54a;
+  --pastilla: #e3f0fa;
+  --campo-fondo: #ffffff;
+  --campo-borde: #b8c9d6;
+  --boton: #0b4f8a;
+  --boton-hover: #083a66;
+  --error-fondo: #fdecec;
+  --error-texto: #8a1f1f;
+  --error-borde: #c62828;
+  --exito-fondo: #e8f6ec;
+  --exito-texto: #14532d;
+  --exito-borde: #2e7d32;
+  color-scheme: light;
+}
+
+/*Colores Oscuro*/
+:root[data-tema="oscuro"] {
+  --fondo: #0f1b26;
+  --texto: #e8eef3;
+  --tarjeta: #16293a;
+  --borde: #2c4357;
+  --titulo: #7cc4ff;
+  --enlace: #8fd0ff;
+  --barra: #0a2f4d;
+  --barra-texto: #ffffff;
+  --resalte: #ffd54a;
+  --pastilla: #1f3b52;
+  --campo-fondo: #0f1b26;
+  --campo-borde: #3b5266;
+  --boton: #1b78c9;
+  --boton-hover: #2a8fe3;
+  --error-fondo: #3a1414;
+  --error-texto: #ffb4b4;
+  --error-borde: #e05555;
+  --exito-fondo: #14301b;
+  --exito-texto: #b7f0c4;
+  --exito-borde: #3fbf6a;
+  color-scheme: dark;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #eef4f8;
-  color: #1f2a33;
+  background-color: var(--fondo);
+  color: var(--texto);
   line-height: 1.5;
   margin: 0;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 header {
-  background-color: #0b4f8a;
-  color: #ffffff;
+  background-color: var(--barra);
+  color: var(--barra-texto);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -33,14 +84,30 @@ nav ul {
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--barra-texto);
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: #ffd54a;
+  color: var(--resalte);
+}
+
+/* Boton claro-oscuro */
+.boton-tema {
+  margin: 0;
+  background-color: transparent;
+  color: var(--barra-texto);
+  border: 2px solid var(--barra-texto);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.boton-tema:hover {
+  background-color: var(--barra-texto);
+  color: var(--barra);
 }
 
 main {
@@ -50,8 +117,8 @@ main {
 }
 
 .tarjeta {
-  background-color: #ffffff;
-  border: 1px solid #d3e0ea;
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
@@ -59,11 +126,11 @@ main {
 
 h1,
 h2 {
-  color: #0b4f8a;
+  color: var(--titulo);
 }
 
 a {
-  color: #0b6fc2;
+  color: var(--enlace);
 }
 
 #servicios ul {
@@ -75,7 +142,7 @@ a {
 }
 
 #servicios li {
-  background-color: #e3f0fa;
+  background-color: var(--pastilla);
   border-radius: 20px;
   padding: 8px 16px;
 }
@@ -88,14 +155,14 @@ table {
 
 th,
 td {
-  border: 1px solid #d3e0ea;
+  border: 1px solid var(--borde);
   padding: 10px;
   text-align: left;
 }
 
 th {
-  background-color: #0b4f8a;
-  color: #ffffff;
+  background-color: var(--barra);
+  color: var(--barra-texto);
 }
 
 form label {
@@ -110,16 +177,27 @@ form textarea {
   width: 100%;
   padding: 10px;
   margin-top: 4px;
-  border: 1px solid #b8c9d6;
+  border: 1px solid var(--campo-borde);
   border-radius: 8px;
   font-size: 16px;
   box-sizing: border-box;
   font-family: inherit;
+  background-color: var(--campo-fondo);
+  color: var(--texto);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #7d8f9c;
+}
+form input.campo-error {
+  border-color: var(--error-borde);
+  border-width: 2px;
 }
 
 button {
   margin-top: 16px;
-  background-color: #0b4f8a;
+  background-color: var(--boton);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -130,12 +208,33 @@ button {
 }
 
 button:hover {
-  background-color: #083a66;
+  background-color: var(--boton-hover);
+}
+.aviso {
+  display: none;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.aviso.error {
+  display: block;
+  background-color: var(--error-fondo);
+  color: var(--error-texto);
+  border-left: 4px solid var(--error-borde);
+}
+
+.aviso.exito {
+  display: block;
+  background-color: var(--exito-fondo);
+  color: var(--exito-texto);
+  border-left: 4px solid var(--exito-borde);
 }
 
 footer {
-  background-color: #0b4f8a;
-  color: #ffffff;
+  background-color: var(--barra);
+  color: var(--barra-texto);
   text-align: center;
   padding: 20px;
   font-size: 14px;
@@ -174,8 +273,3 @@ footer p {
     flex-basis: 100%;
   }
 }
-
-
-
-
-

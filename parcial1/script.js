@@ -6,3 +6,4 @@ function confirmarEncargo() {
 
 const boton = document.querySelector("#btn-confirmar");
 boton.addEventListener("click", confirmarEncargo);
+
