@@ -15,7 +15,7 @@
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#ubicacion">Donde estamos</a></li>
+        <li><a href="#ubicacion">Dónde estamos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -24,11 +24,11 @@
 
   <main>
     <section id="inicio" class="tarjeta">
-      <h1>Tu auto limpio rapido y a buen precio</h1>
+      <h1>Tu auto limpio, rápido y a buen precio</h1>
       <p>
-        En Lavado de Autos Apaza cuidamos la limpieza y el aspecto de tu vehiculo
-        Atendemos a clientes particulares propietarios de vehiculos de transporte
-        y flotas pequeñas de la ciudad de Oruro
+        En Lavado de Autos Apaza cuidamos la limpieza y el aspecto de tu vehículo.
+        Atendemos a clientes particulares, propietarios de vehículos de transporte
+        y flotas pequeñas de la ciudad de Oruro.
       </p>
     </section>
 
@@ -49,7 +49,7 @@
           <th>Precio (Bs)</th>
         </tr>
         <tr>
-          <td>Lavado basico</td>
+          <td>Lavado básico</td>
           <td>18 Bs</td>
         </tr>
         <tr>
@@ -57,12 +57,12 @@
           <td>50 Bs</td>
         </tr>
       </table>
-      <p>Los precios van de Bs 18 a Bs 50 segun el tipo de lavado.</p>
+      <p>Los precios van de Bs 18 a Bs 50 según el tipo de lavado.</p>
     </section>
 
     <section id="ubicacion" class="tarjeta">
-      <h2>Dónde nos puedes encontrar</h2>
-      <p>Direccion: Av. America esquina , Arica ORURO.</p>
+      <h2>Donde nos puedes encontrar</h2>
+      <p>Direccion: Av. America esquina Arica, Oruro.</p>
       <p><a href="https://goo.gl/maps/E2LmEG3jrSXqFNHk8">Ver ubicacion en Google Maps</a></p>
     </section>
 
@@ -72,7 +72,8 @@
       <p>WhatsApp: <a href="https://wa.me/59161659011">+591 61659011</a></p>
 
       <h2>Escribenos</h2>
-      <form id="form-contacto" novalidate>
+     //Enviamos los datos del formulario a procesar.php para mostrarlos
+      <form id="form-contacto" method="POST" action="procesar.php" novalidate>
         <label for="nombre">Nombre completo</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
 
@@ -101,9 +102,9 @@
   </main>
 
   <footer>
-    <p>Lavado de Autos Apaza - Av. America esquina Arica, ORURO, BOLIVIA.</p>
-    <p>Desarrollado por: Juan David Copa Gutiérrez - Universidad Adventista de Bolivia</p>
-    <p>&copy; 2026 Lavado de Autos Apaza. Todos los derechos reservados.</p>
+    <p>Lavado de Autos Apaza - Av. America esquina Arica, Oruro, Bolivia</p>
+    <p>Desarrollado por: Juan David Copa Gutierrez - Universidad Adventista de Bolivia</p>
+    <p>&copy; 2026 Lavado de Autos Apaza. Todos los derechos de Juan David Copa Gutierrez</p>
   </footer>
 
   <script src="script.js"></script>

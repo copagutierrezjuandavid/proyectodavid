@@ -97,16 +97,9 @@ function revisarContacto(event) {
   } else if (telefono.length < 7 || telefono.length > 8) {
     mostrarError("Tu teléfono debe tener 7 u 8 dígitos. Escribiste " + telefono.length + ".", campoTelefono);
   } else {
-    // Si todos los datos estan correctos mostramos un mensaje de exito
-    avisoContacto.textContent =
-      "Mensaje enviado, " + nombre + ". Te contactaremos al " + telefono + " por tu consulta de: " + servicio + ".";
-    avisoContacto.classList.add("exito");
-    avisoContacto.classList.remove("error");
-    campoNombre.classList.remove("campo-error");
-    campoCorreo.classList.remove("campo-error");
-    campoTelefono.classList.remove("campo-error");
-    formularioContacto.reset();
+    //Enviamos el formulario si todos los datos son correctos.
+    formularioContacto.submit();
   }
 }
-
+// Revisamos los datos cuando el usuario envía el formulario.
 formularioContacto.addEventListener("submit", revisarContacto);
