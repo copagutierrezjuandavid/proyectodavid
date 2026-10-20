@@ -14,7 +14,24 @@
   <main>
     <section class="tarjeta">
       <p>
-        Bienvenido a la Salteñería El Horno, donde preparamos cada día salteñas
-        jugosas y recién horneadas. Haz tu pedido aquí y te lo tendremos listo.
+        Bienvenido a la Salteñería El Horno donde preparamos cada día salteñas
+        jugosas y recién horneadas haz tu pedido aqui y te lo tendremos listo
       </p>
 
+
+      <form id="form-horno" method="POST" action="procesar.php" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido">
+
+        <label for="correo">Correo electronico</label>
+        <input type="text" id="correo" name="correo" placeholder="tunombre@gmail.com">
+
+        <label for="pedido">¿Que salteñas quers?</label>
+        <input type="text" id="pedido" name="pedido" placeholder="Ej: 3 de pollo y 1 refresco">
+
+        <button type="submit">Hacer mi pedido</button>
+
+        <p id="aviso-horno" class="aviso"></p>
+      </form>
+    </section>
+  </main>
