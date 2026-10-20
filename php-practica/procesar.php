@@ -34,6 +34,7 @@ $mensaje  = $_POST["mensaje"];
 
 // Mostramos la informacion que envio el usuario 
 echo "<h2>Mensaje recibido</h2>";
+echo "<p>Gracias, $nombre. Estos son los datos que recibimos:</p>";
 echo "<p>Nombre: $nombre</p>";
 echo "<p>Correo: $correo</p>";
 echo "<p>Teléfono: $telefono</p>";
