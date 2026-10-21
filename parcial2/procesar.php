@@ -43,3 +43,15 @@ foreach ($carta as $producto => $precio) {
 echo "</table>";
 
 echo "<p class=\"atiende\">Te atiende TU NOMBRE COMPLETO</p>";
+
+?>
+      <p><a href="index.html">Volver al formulario</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Juan David Copa Gutierrez - FECHA 20 de octubre del  2026</p>
+  </footer
+
+</body>
+</html>
