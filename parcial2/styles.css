@@ -92,3 +92,46 @@ button:hover { background-color: var(--guindo-oscuro); }
   border-radius: 6px;
   font-weight: bold;
 }
+
+.aviso.error {
+  display: block;
+  background-color: var(--error-fondo);
+  color: var(--error-texto);
+  border-left: 4px solid var(--error-borde);
+}
+
+.aviso.exito {
+  display: block;
+  background-color: var(--exito-fondo);
+  color: var(--exito-texto);
+  border-left: 4px solid var(--exito-borde);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid var(--borde);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--guindo);
+  color: #ffffff;
+}
+
+.atiende { font-weight: bold; color: var(--guindo); }
+
+footer {
+  background-color: var(--guindo);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer p { margin: 4px 0; }
