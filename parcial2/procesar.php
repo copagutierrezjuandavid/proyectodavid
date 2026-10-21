@@ -42,7 +42,7 @@ foreach ($carta as $producto => $precio) {
 }
 echo "</table>";
 
-echo "<p class=\"atiende\">Te atiende TU NOMBRE COMPLETO</p>";
+echo "<p class=\"atiende\">Te atiende Juan David Copa Gutierrez</p>";
 
 ?>
       <p><a href="index.html">Volver al formulario</a></p>
