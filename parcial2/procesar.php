@@ -23,3 +23,23 @@ $pedido = htmlspecialchars($_POST["pedido"] ?? "");
 if ($pedido === "") {
   $pedido = "No indicó pedido";
 }
+echo "<h2>Datos del cliente</h2>";
+echo "<p><strong>Nombre:</strong> $nombre</p>";
+echo "<p><strong>Correo:</strong> $correo</p>";
+echo "<p><strong>Pedido:</strong> $pedido</p>";
+// Lista de productos y sus precios
+$carta = [
+  "Salteña de pollo"        => "Bs 6",
+  "Docena de salteñas"      => "Bs 65",
+  "Refresco de mocochinchi" => "Bs 5"
+];
+
+echo "<h2>Nuestra carta</h2>";
+echo "<table>";
+echo "<tr><th>Producto</th><th>Precio</th></tr>";
+foreach ($carta as $producto => $precio) {
+  echo "<tr><td>$producto</td><td>$precio</td></tr>";
+}
+echo "</table>";
+
+echo "<p class=\"atiende\">Te atiende TU NOMBRE COMPLETO</p>";
