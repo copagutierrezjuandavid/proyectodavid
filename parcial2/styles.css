@@ -1,0 +1,94 @@
+:root {
+  --fondo: #f7eef0;
+  --texto: #2b1a1e;
+  --tarjeta: #ffffff;
+  --borde: #e3c9ce;
+  --guindo: #7b1e2e;
+  --guindo-oscuro: #5a1421;
+  --resalte: #ffd54a;
+  --campo-borde: #c9a7ae;
+  --error-fondo: #fdecec;
+  --error-texto: #8a1f1f;
+  --error-borde: #c62828;
+  --exito-fondo: #e8f6ec;
+  --exito-texto: #14532d;
+  --exito-borde: #2e7d32;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+  margin: 0;
+}
+
+header {
+  background-color: var(--guindo);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--resalte);
+}
+
+header h1 { margin: 0; }
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tarjeta {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 { color: var(--guindo); }
+a { color: var(--guindo); font-weight: bold; }
+
+form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--campo-borde);
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+form input:focus {
+  outline: 2px solid var(--guindo);
+}
+
+button {
+  margin-top: 16px;
+  background-color: var(--guindo);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover { background-color: var(--guindo-oscuro); }
+
+/* Mensaje oculto al inicio */
+.aviso {
+  display: none;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
