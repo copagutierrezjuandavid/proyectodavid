@@ -12,7 +12,7 @@ function validarPedido(event) {
   const correo = document.querySelector("#correo").value.trim();
 
   if (nombre === "" || correo === "") {
-    // Caso 1: faltan datos detenemos el envio
+    // Caso 1: faltan datos  detenemos el envo
     event.preventDefault();
     aviso.textContent = "Sin tu nombre y tu correo no anotamos el pedido.";
     aviso.classList.add("error");
@@ -31,9 +31,5 @@ function validarPedido(event) {
   }
 }
 
-formulario.addEventListener("submit", validarPedido);  // Leemos los valores de los campos
-  const nombre = document.querySelector("#nombre").value.trim();
-  const correo = document.querySelector("#correo").value.trim();
-
-  if (nombre === "" || correo === "") {
+formulario.addEventListener("submit", validarPedido);
 
