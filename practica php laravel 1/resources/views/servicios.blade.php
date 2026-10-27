@@ -48,7 +48,7 @@
   {{-- ===== LISTA COMPLETA (viene de la base de datos) ===== --}}
   <section class="tarjeta">
     <h2>Servicios guardados</h2>
-    <p>Esta lista viene de la base de datos. Si recargas, siguen ahí.</p>
+    <p>Esta lista viene de la base de datos. Si recargas siguen ahí.</p>
 
     <div style="overflow-x: auto;">
       <table>

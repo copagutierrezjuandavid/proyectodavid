@@ -20,7 +20,7 @@ Route::get('/inicio', function () {
     return view('inicio', ['servicios' => $servicios]);
 })->name('inicio');
 
-// ---------- Contacto (solo información) ----------
+// ---------- Contacto ----------
 Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
@@ -31,7 +31,7 @@ Route::get('/servicios', function () {
     return view('servicios', ['registros' => Mensaje::orderByDesc('id')->get()]);
 })->name('servicios');
 
-// Un solo botón "Guardar": guarda todo
+// Un solo botón "Guardar"
 Route::post('/servicios', function (Request $request) {
     $datos = $request->validate([
         'nombre_servicio' => 'required|min:3',

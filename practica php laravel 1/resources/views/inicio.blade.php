@@ -6,9 +6,9 @@
   <section class="tarjeta">
     <h1>Tu auto limpio, rápido y a buen precio</h1>
     <p>
-      En Lavado de Autos Apaza cuidamos la limpieza y el aspecto de tu vehículo.
-      Atendemos a clientes particulares, propietarios de vehículos de transporte
-      y flotas pequeñas de la ciudad de Oruro.
+      En Lavado de Autos Apaza cuidamos la limpieza y el aspecto de tu vehiculo.
+      Atendemos a clientes particulares propietarios de vehículos de transporte
+      y flotas pequeñas de la ciudad de Oruro
     </p>
   </section>
 
