@@ -17,6 +17,8 @@ class AuthController extends Controller
 
     public function entrar(Request $request)
     {
+        $request->merge(['email' => strtolower(trim((string) $request->input('email')))]);
+
         $datos = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -27,7 +29,9 @@ class AuthController extends Controller
             return redirect()->intended(route('panel'));
         }
 
-        return back()->withInput($request->only('email'))->with('error', 'Correo o contraseña incorrectos.');
+        return back()
+            ->withInput($request->only('email'))
+            ->with('error', 'Correo o contraseña incorrectos.');
     }
 
     public function formRegistro()
@@ -38,6 +42,8 @@ class AuthController extends Controller
     // Registro público: SIEMPRE crea un cliente (el rol nunca viene del formulario)
     public function registrar(Request $request)
     {
+        $request->merge(['email' => strtolower(trim((string) $request->input('email')))]);
+
         $datos = $request->validate([
             'name' => ['required', 'string', 'min:3', 'max:100'],
             'email' => ['required', 'email', 'max:150', 'unique:users,email'],
@@ -50,7 +56,7 @@ class AuthController extends Controller
                 'name' => $datos['name'],
                 'email' => $datos['email'],
                 'telefono' => $datos['telefono'],
-                'password' => $datos['password'],
+                'password' => $datos['password'], // se encripta sola (cast 'hashed')
                 'role' => 'cliente',
             ]);
 

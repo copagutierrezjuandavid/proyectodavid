@@ -5,7 +5,7 @@
 @section('contenido')
   <section class="tarjeta">
     <h1>Nuestros servicios</h1>
-    @php $editable = auth()->check() && auth()->user()->esGerente(); @endphp
+    @php $editable = auth()->check() && auth()->user()->esPersonal(); @endphp
     @include('publico._precios', ['editable' => $editable])
     @if ($editable)
       <p><a href="{{ route('servicios.nuevo') }}" class="boton">+ Agregar servicio</a></p>

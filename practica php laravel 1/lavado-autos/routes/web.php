@@ -49,15 +49,16 @@ Route::middleware('auth')->group(function () {
         Route::post('/reservas', [ReservaController::class, 'guardarStaff'])->name('reservas.guardar');
         Route::get('/reservas/{reserva}', [ReservaController::class, 'ver'])->name('reservas.ver');
         Route::put('/reservas/{reserva}', [ReservaController::class, 'actualizar'])->name('reservas.actualizar');
-    });
 
-    // Solo gerente
-    Route::middleware('role:gerente')->group(function () {
+        // Servicios y precios (gerente y cajero)
         Route::get('/servicios/nuevo', [ServicioController::class, 'nuevo'])->name('servicios.nuevo');
         Route::post('/servicios', [ServicioController::class, 'guardar'])->name('servicios.guardar');
         Route::get('/servicios/{servicio}/editar', [ServicioController::class, 'editar'])->name('servicios.editar');
         Route::put('/servicios/{servicio}', [ServicioController::class, 'actualizar'])->name('servicios.actualizar');
+    });
 
+    // Solo gerente
+    Route::middleware('role:gerente')->group(function () {
         Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
         Route::get('/usuarios/nuevo', [UsuarioController::class, 'crear'])->name('usuarios.crear');
         Route::post('/usuarios', [UsuarioController::class, 'guardar'])->name('usuarios.guardar');

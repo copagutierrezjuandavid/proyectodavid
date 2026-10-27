@@ -31,6 +31,7 @@ class User extends Authenticatable
     public function esGerente(): bool { return $this->role === 'gerente'; }
     public function esCajero(): bool { return $this->role === 'cajero'; }
     public function esCliente(): bool { return $this->role === 'cliente'; }
+    public function esPersonal(): bool { return in_array($this->role, ['gerente', 'cajero'], true); }
 
     public function rolEtiqueta(): string
     {

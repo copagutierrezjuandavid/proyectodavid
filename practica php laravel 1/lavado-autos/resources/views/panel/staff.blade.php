@@ -19,8 +19,8 @@
     <p class="botones">
       <a href="{{ route('reservas.crear') }}" class="boton">+ Nueva reserva</a>
       <a href="{{ route('clientes.crear') }}" class="boton boton-sec">+ Registrar cliente</a>
+      <a href="{{ route('servicios') }}" class="boton boton-sec">Servicios y precios</a>
       @if (auth()->user()->esGerente())
-        <a href="{{ route('servicios') }}" class="boton boton-sec">Servicios y precios</a>
         <a href="{{ route('usuarios.crear') }}" class="boton boton-sec">+ Nuevo usuario</a>
       @endif
     </p>
