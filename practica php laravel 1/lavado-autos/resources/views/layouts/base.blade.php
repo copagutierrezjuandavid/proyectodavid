@@ -14,6 +14,7 @@
         <li><a href="{{ route('inicio') }}">Inicio</a></li>
         <li><a href="{{ route('servicios') }}">Servicios</a></li>
         <li><a href="{{ route('contacto') }}">Contacto</a></li>
+        <li><a href="{{ route('panel') }}">Panel</a></li>
       </ul>
     </nav>
   </header>
