@@ -11,8 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->redirectGuestsTo('/login');   // sin sesión -> login
-        $middleware->redirectUsersTo('/panel');    // con sesión -> su panel
+        $middleware->redirectGuestsTo('/login');   // 
+        $middleware->redirectUsersTo('/panel');    // 
         $middleware->alias(['role' => \App\Http\Middleware\RoleMiddleware::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
