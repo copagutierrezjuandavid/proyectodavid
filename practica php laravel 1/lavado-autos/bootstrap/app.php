@@ -11,8 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Quien no tenga llave y toque una puerta cerrada, va al login
-        $middleware->redirectGuestsTo('/login');
+        $middleware->redirectGuestsTo('/login');   // sin sesión -> login
+        $middleware->redirectUsersTo('/panel');    // con sesión -> su panel
+        $middleware->alias(['role' => \App\Http\Middleware\RoleMiddleware::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
