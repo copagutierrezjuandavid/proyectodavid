@@ -28,7 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'salir'])->name('logout');
     Route::get('/panel', [PanelController::class, 'index'])->name('panel');
 
-    // Solo clientes
     Route::middleware('role:cliente')->group(function () {
         Route::post('/mis-vehiculos', [VehiculoController::class, 'guardarPropio'])->name('mis-vehiculos.guardar');
         Route::get('/reservar', [ReservaController::class, 'crearCliente'])->name('reservar');
@@ -36,7 +35,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/mis-reservas/{reserva}/cancelar', [ReservaController::class, 'cancelarCliente'])->name('reservas.cancelar');
     });
 
-    // Gerente y cajero
     Route::middleware('role:gerente,cajero')->group(function () {
         Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
         Route::get('/clientes/nuevo', [ClienteController::class, 'crear'])->name('clientes.crear');
@@ -50,17 +48,42 @@ Route::middleware('auth')->group(function () {
         Route::get('/reservas/{reserva}', [ReservaController::class, 'ver'])->name('reservas.ver');
         Route::put('/reservas/{reserva}', [ReservaController::class, 'actualizar'])->name('reservas.actualizar');
 
-        // Servicios y precios (gerente y cajero)
         Route::get('/servicios/nuevo', [ServicioController::class, 'nuevo'])->name('servicios.nuevo');
         Route::post('/servicios', [ServicioController::class, 'guardar'])->name('servicios.guardar');
         Route::get('/servicios/{servicio}/editar', [ServicioController::class, 'editar'])->name('servicios.editar');
         Route::put('/servicios/{servicio}', [ServicioController::class, 'actualizar'])->name('servicios.actualizar');
     });
 
-    // Solo gerente
     Route::middleware('role:gerente')->group(function () {
         Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
         Route::get('/usuarios/nuevo', [UsuarioController::class, 'crear'])->name('usuarios.crear');
         Route::post('/usuarios', [UsuarioController::class, 'guardar'])->name('usuarios.guardar');
     });
+});
+
+// ---------- Integradora: Pastelería La Espiga ----------
+
+Route::get('/tortas', function () {
+    $tortas = \App\Models\Torta::orderBy('id')->get();
+
+    return view('tortas', ['tortas' => $tortas]);
+});
+
+Route::get('/tortas/nuevo', function () {
+    return view('nuevo');
+});
+
+Route::post('/tortas/nuevo', function (\Illuminate\Http\Request $request) {
+    $datos = $request->validate([
+        'sabor' => 'required',
+        'precio' => 'required|integer',
+    ], [
+        'sabor.required' => 'Indica el sabor de la torta.',
+        'precio.required' => 'Indica el precio de la torta.',
+        'precio.integer' => 'El precio va en digitos, sin centavos.',
+    ]);
+
+    \App\Models\Torta::create($datos);
+
+    return redirect('/tortas');
 });
