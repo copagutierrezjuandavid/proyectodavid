@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pastelería La Espiga</title>
+  <title>Pastelería la Espiga</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 1rem; color: #222; }
     header, footer { text-align: center; padding: 1rem 0; }
