@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tortas', function (Blueprint $table) {
-            // default(0) hace que las tortas anteriores queden con stock 0
             $table->unsignedInteger('stock')->default(0)->after('precio');
         });
     }
