@@ -75,12 +75,16 @@ Route::get('/tortas/nuevo', function () {
 
 Route::post('/tortas/nuevo', function (\Illuminate\Http\Request $request) {
     $datos = $request->validate([
-        'sabor' => 'required',
+        'sabor'  => 'required',
         'precio' => 'required|integer',
+        'stock'  => 'required|integer|min:0',
     ], [
-        'sabor.required' => 'Indica el sabor de la torta.',
+        'sabor.required'  => 'Indica el sabor de la torta.',
         'precio.required' => 'Indica el precio de la torta.',
-        'precio.integer' => 'El precio va en digitos, sin centavos.',
+        'precio.integer'  => 'El precio va en digitos, sin centavos.',
+        'stock.required'  => 'Indica el stock de la torta.',
+        'stock.integer'   => 'El stock debe ser un número entero, sin decimales.',
+        'stock.min'       => 'El stock no puede ser negativo.',
     ]);
 
     \App\Models\Torta::create($datos);
